@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationsViewController" customModule="MapsClone" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="e1Z-eD-DKs" id="3AQ-jl-BP2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-eD-DKs">
+                    <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-tY-4RW">
+                    <rect key="frame" x="169.5" y="0.0" width="36.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="X3r-tY-4RW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LEN-Ak-ecR"/>
+                <constraint firstItem="e1Z-eD-DKs" firstAttribute="top" secondItem="X3r-tY-4RW" secondAttribute="bottom" id="T2w-RI-TeC"/>
+                <constraint firstItem="e1Z-eD-DKs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YTn-DU-C3O"/>
+                <constraint firstAttribute="trailing" secondItem="e1Z-eD-DKs" secondAttribute="trailing" id="ZUw-g5-HXW"/>
+                <constraint firstItem="e1Z-eD-DKs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="aGi-Yv-7tE"/>
+                <constraint firstItem="X3r-tY-4RW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="arN-DE-fEd"/>
+                <constraint firstAttribute="bottom" secondItem="e1Z-eD-DKs" secondAttribute="bottom" id="ktb-sc-Sar"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
