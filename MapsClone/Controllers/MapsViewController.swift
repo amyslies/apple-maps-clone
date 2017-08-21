@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDelegate {
+class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDelegate, LocationsViewControllerDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var locationsContainerView: UIView!
@@ -26,7 +26,7 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
 
     mapView.delegate = self
 
-    locationsVC = LocationsViewController()
+    locationsVC = LocationsViewController.init(withDelegate: self)
     setUpChildViewController(locationsVC, inContainerView: locationsContainerView)
   }
 
@@ -36,7 +36,14 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
     childVC.didMove(toParentViewController: self)
   }
 
+  // LocationsViewControllerDelegate Methods
+
+  func didSelectLocation(_ selectedLocation: CLLocation) {
+    // TODO: select location on the map and show location details
+  }
+
   // MKMapViewDelegate Methods
+
 
 
   // UIScrollViewDelegate Methods

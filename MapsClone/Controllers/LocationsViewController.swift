@@ -9,13 +9,31 @@
 import UIKit
 import CoreLocation
 
+protocol LocationsViewControllerDelegate {
+  func didSelectLocation(_ selectedLocation : CLLocation)
+}
+
 class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LocationsDataSourceDelegate {
 
   let cellReuseIdentifier = "UITableViewCell"
   var locations : [Any] = []
   var locationsDataSource : LocationsDataSource!
+  var delegate : LocationsViewControllerDelegate!
 
   @IBOutlet weak var tableView: UITableView!
+
+  // Initializers
+
+  init(withDelegate delegate : LocationsViewControllerDelegate) {
+    super.init(nibName: nil, bundle: nil)
+    self.delegate = delegate
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+
+  // UIViewController Methods
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,6 +69,14 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     cell!.textLabel?.text = "location: \(indexPath.row)"
 
     return cell!
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: false)
+
+    if let location : CLLocation = locations[indexPath.row] {
+      delegate.didSelectLocation(location)
+    }
   }
 
 }
