@@ -10,13 +10,14 @@ import UIKit
 import CoreLocation
 
 protocol LocationsViewControllerDelegate {
-  func didSelectLocation(_ selectedLocation : CLLocation)
+  func didSelectLocationAnnotation(_ selectedLocationAnnotation : LocationAnnotation)
+  func didUpdateLocationAnnotations(_ locationAnnotations : [LocationAnnotation])
 }
 
 class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LocationsDataSourceDelegate {
 
   let cellReuseIdentifier = "UITableViewCell"
-  var locations : [Any] = []
+  var locationAnnotations : [LocationAnnotation] = []
   var locationsDataSource : LocationsDataSource!
   var delegate : LocationsViewControllerDelegate!
 
@@ -49,14 +50,15 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
   // LocationsDataSourceDelegate Methods
 
   func didUpdateLocations(_ locations: [CLLocation]) {
-    self.locations = locations
+    self.locationAnnotations = self.locationAnnotationsFromLocations(locations)
+    delegate.didUpdateLocationAnnotations(self.locationAnnotations)
     tableView.reloadData()
   }
 
   // UITableViewDelegate Methods
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return locations.count
+    return locationAnnotations.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,10 +75,17 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
-
-    if let location : CLLocation = locations[indexPath.row] {
-      delegate.didSelectLocation(location)
-    }
+    delegate.didSelectLocationAnnotation(locationAnnotations[indexPath.row])
   }
 
+  // Helper Methods
+
+  func locationAnnotationsFromLocations(_ locations : [CLLocation]) -> [LocationAnnotation] {
+    var annotations : [LocationAnnotation] = []
+    for location in locations {
+      annotations.append(LocationAnnotation.init(location))
+    }
+
+    return annotations
+  }
 }

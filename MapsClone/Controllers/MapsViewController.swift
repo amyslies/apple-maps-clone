@@ -16,6 +16,7 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
   @IBOutlet weak var locationsScrollView: SnapScrollView!
 
   var locationsVC : LocationsViewController!
+  var locationAnnotations : [LocationAnnotation]! = []
 
   // UIViewController Methods
 
@@ -25,6 +26,7 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
     locationsScrollView.delegate = self
 
     mapView.delegate = self
+    mapView.showsUserLocation = true
 
     locationsVC = LocationsViewController.init(withDelegate: self)
     setUpChildViewController(locationsVC, inContainerView: locationsContainerView)
@@ -36,10 +38,21 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
     childVC.didMove(toParentViewController: self)
   }
 
+  func refreshMap() {
+    mapView.removeAnnotations(mapView.annotations)
+    mapView.addAnnotations(locationAnnotations)
+  }
+
   // LocationsViewControllerDelegate Methods
 
-  func didSelectLocation(_ selectedLocation: CLLocation) {
+  func didSelectLocationAnnotation(_ selectedLocationAnnotation: LocationAnnotation) {
+    mapView.selectAnnotation(selectedLocationAnnotation, animated: true)
     // TODO: select location on the map and show location details
+  }
+
+  func didUpdateLocationAnnotations(_ locationAnnotations: [LocationAnnotation]) {
+    self.locationAnnotations = locationAnnotations
+    refreshMap()
   }
 
   // MKMapViewDelegate Methods

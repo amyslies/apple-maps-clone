@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51148FC1F4C81730041D41C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51148FB1F4C81730041D41C /* LocationAnnotation.swift */; };
 		E568505E1F47682C0051F37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568505D1F47682C0051F37D /* AppDelegate.swift */; };
 		E56850651F47682C0051F37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56850641F47682C0051F37D /* Assets.xcassets */; };
 		E56850731F47682D0051F37D /* MapsCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56850721F47682D0051F37D /* MapsCloneTests.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E51148FB1F4C81730041D41C /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Models/LocationAnnotation.swift; sourceTree = "<group>"; };
 		E568505A1F47682C0051F37D /* MapsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E568505D1F47682C0051F37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E56850641F47682C0051F37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		E568509F1F47E60B0051F37D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E51148FB1F4C81730041D41C /* LocationAnnotation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				E56850AF1F49EB770051F37D /* UIViewExtension.swift in Sources */,
 				E56850B31F4A28240051F37D /* LocationsDataSource.swift in Sources */,
+				E51148FC1F4C81730041D41C /* LocationAnnotation.swift in Sources */,
 				E56850AB1F49DB8B0051F37D /* SnapScrollView.swift in Sources */,
 				E56850B11F4A10E50051F37D /* ChildControllerScrollActivationProtocol.swift in Sources */,
 				E568505E1F47682C0051F37D /* AppDelegate.swift in Sources */,
