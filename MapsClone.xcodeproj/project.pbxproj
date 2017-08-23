@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E51148FC1F4C81730041D41C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51148FB1F4C81730041D41C /* LocationAnnotation.swift */; };
+		E51148FF1F4CAE640041D41C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51148FD1F4CAE640041D41C /* DetailViewController.swift */; };
+		E51149001F4CAE640041D41C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51148FE1F4CAE640041D41C /* DetailViewController.xib */; };
 		E568505E1F47682C0051F37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568505D1F47682C0051F37D /* AppDelegate.swift */; };
 		E56850651F47682C0051F37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56850641F47682C0051F37D /* Assets.xcassets */; };
 		E56850731F47682D0051F37D /* MapsCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56850721F47682D0051F37D /* MapsCloneTests.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		E51148FB1F4C81730041D41C /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Models/LocationAnnotation.swift; sourceTree = "<group>"; };
+		E51148FD1F4CAE640041D41C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controllers/DetailViewController.swift; sourceTree = "<group>"; };
+		E51148FE1F4CAE640041D41C /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Controllers/DetailViewController.xib; sourceTree = "<group>"; };
 		E568505A1F47682C0051F37D /* MapsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E568505D1F47682C0051F37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E56850641F47682C0051F37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				E56850A11F4930EC0051F37D /* LocationsViewController.xib */,
 				E56850A21F4930EC0051F37D /* MapsViewController.swift */,
 				E56850A31F4930EC0051F37D /* MapsViewController.xib */,
+				E51148FD1F4CAE640041D41C /* DetailViewController.swift */,
+				E51148FE1F4CAE640041D41C /* DetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				E56850A51F4930EC0051F37D /* LocationsViewController.xib in Resources */,
 				E56850651F47682C0051F37D /* Assets.xcassets in Resources */,
 				E56850A71F4930EC0051F37D /* MapsViewController.xib in Resources */,
+				E51149001F4CAE640041D41C /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51148FF1F4CAE640041D41C /* DetailViewController.swift in Sources */,
 				E56850AF1F49EB770051F37D /* UIViewExtension.swift in Sources */,
 				E56850B31F4A28240051F37D /* LocationsDataSource.swift in Sources */,
 				E51148FC1F4C81730041D41C /* LocationAnnotation.swift in Sources */,

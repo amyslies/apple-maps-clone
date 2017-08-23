@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapsViewController" customModule="MapsClone" customModuleProvider="target">
             <connections>
+                <outlet property="detailContainerView" destination="JMG-dN-gm1" id="jiX-Fb-Bo0"/>
+                <outlet property="detailScrollView" destination="eWV-kz-7kd" id="5WE-mb-utv"/>
                 <outlet property="locationsContainerView" destination="QIZ-X8-cGE" id="HRh-MG-F8c"/>
                 <outlet property="locationsScrollView" destination="acu-2W-lb0" id="G7t-U8-IHq"/>
                 <outlet property="mapView" destination="4Eq-AY-0Cz" id="TPy-ty-VGJ"/>
@@ -26,6 +28,36 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Eq-AY-0Cz">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </mapView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWV-kz-7kd" userLabel="Detail Scroll View" customClass="SnapScrollView" customModule="MapsClone" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imq-4o-l2C" userLabel="Detail Scroll Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMG-dN-gm1" userLabel="Detail Content Container View">
+                                    <rect key="frame" x="0.0" y="667" width="375" height="667"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="JMG-dN-gm1" firstAttribute="leading" secondItem="imq-4o-l2C" secondAttribute="leading" id="EDU-76-Ayt"/>
+                                <constraint firstAttribute="bottom" secondItem="JMG-dN-gm1" secondAttribute="bottom" id="hYi-M8-8cP"/>
+                                <constraint firstAttribute="trailing" secondItem="JMG-dN-gm1" secondAttribute="trailing" id="qVt-gX-N1i"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="imq-4o-l2C" secondAttribute="bottom" id="0yL-uP-Gnt"/>
+                        <constraint firstItem="imq-4o-l2C" firstAttribute="top" secondItem="eWV-kz-7kd" secondAttribute="top" id="HoZ-4C-fSG"/>
+                        <constraint firstItem="imq-4o-l2C" firstAttribute="leading" secondItem="eWV-kz-7kd" secondAttribute="leading" id="JQM-ep-Myz"/>
+                        <constraint firstAttribute="trailing" secondItem="imq-4o-l2C" secondAttribute="trailing" id="y0O-Zu-MaU"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="contentSubview" destination="JMG-dN-gm1" id="Pn5-K9-ALC"/>
+                        <outlet property="heightConstraint" destination="MGg-7w-my0" id="oAs-6t-E2d"/>
+                        <outlet property="ignoredSubview" destination="imq-4o-l2C" id="As1-rh-cWI"/>
+                    </connections>
+                </scrollView>
                 <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acu-2W-lb0" userLabel="Locations Scroll View" customClass="SnapScrollView" customModule="MapsClone" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
@@ -61,13 +93,20 @@
             <constraints>
                 <constraint firstItem="acu-2W-lb0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Bq-3C-5sR"/>
                 <constraint firstItem="4Eq-AY-0Cz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3ux-h1-Wk4"/>
+                <constraint firstAttribute="bottom" secondItem="eWV-kz-7kd" secondAttribute="bottom" id="6zV-xd-ssT"/>
+                <constraint firstAttribute="trailing" secondItem="eWV-kz-7kd" secondAttribute="trailing" id="Amm-nM-6ut"/>
+                <constraint firstItem="eWV-kz-7kd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ix7-gd-CUh"/>
                 <constraint firstAttribute="trailing" secondItem="acu-2W-lb0" secondAttribute="trailing" id="M7F-Ed-IWs"/>
+                <constraint firstItem="imq-4o-l2C" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="2" id="MGg-7w-my0"/>
                 <constraint firstAttribute="bottom" secondItem="acu-2W-lb0" secondAttribute="bottom" id="Oy8-s0-XhU"/>
                 <constraint firstAttribute="bottom" secondItem="4Eq-AY-0Cz" secondAttribute="bottom" id="PFf-Z6-BVN"/>
                 <constraint firstItem="CpD-Is-xj6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="QPE-Bd-GIq"/>
                 <constraint firstItem="QIZ-X8-cGE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="gi4-da-pVh"/>
+                <constraint firstItem="JMG-dN-gm1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="ir5-bt-n9f"/>
                 <constraint firstItem="4Eq-AY-0Cz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mxi-hC-AWA"/>
                 <constraint firstItem="acu-2W-lb0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nBV-iQ-TCW"/>
+                <constraint firstItem="imq-4o-l2C" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ppE-GJ-heA"/>
+                <constraint firstItem="eWV-kz-7kd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sXd-ax-3je"/>
                 <constraint firstAttribute="trailing" secondItem="4Eq-AY-0Cz" secondAttribute="trailing" id="zab-UN-bjU"/>
                 <constraint firstItem="CpD-Is-xj6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="2" id="zw4-Zj-esY"/>
             </constraints>

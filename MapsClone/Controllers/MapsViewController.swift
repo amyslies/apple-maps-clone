@@ -14,9 +14,14 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var locationsContainerView: UIView!
   @IBOutlet weak var locationsScrollView: SnapScrollView!
+  @IBOutlet weak var detailScrollView: SnapScrollView!
+  @IBOutlet weak var detailContainerView: UIView!
 
   var locationsVC : LocationsViewController!
   var locationAnnotations : [LocationAnnotation]! = []
+  var detailVC : DetailViewController!
+
+
 
   // UIViewController Methods
 
@@ -24,6 +29,7 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
     super.viewDidLoad()
 
     locationsScrollView.delegate = self
+    detailScrollView.delegate = self
 
     mapView.delegate = self
     mapView.showsUserLocation = true

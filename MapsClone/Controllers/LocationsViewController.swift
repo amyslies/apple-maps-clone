@@ -23,8 +23,6 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
 
   @IBOutlet weak var tableView: UITableView!
 
-  // Initializers
-
   init(withDelegate delegate : LocationsViewControllerDelegate) {
     super.init(nibName: nil, bundle: nil)
     self.delegate = delegate
@@ -77,8 +75,6 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     tableView.deselectRow(at: indexPath, animated: false)
     delegate.didSelectLocationAnnotation(locationAnnotations[indexPath.row])
   }
-
-  // Helper Methods
 
   func locationAnnotationsFromLocations(_ locations : [CLLocation]) -> [LocationAnnotation] {
     var annotations : [LocationAnnotation] = []
