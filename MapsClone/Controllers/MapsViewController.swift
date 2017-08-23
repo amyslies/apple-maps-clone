@@ -87,6 +87,12 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
     if (topScrollView().didScrollAboveScrollView()) {
       topScrollView().pauseScrolling()
     }
+
+    if (locationsScrollView.didScrollToTopY()) {
+      locationsVC.enableScrollView()
+    } else {
+      locationsVC.disableScrollView()
+    }
   }
 
   func scrollViewWillEndDragging(_ scrollView: UIScrollView,

@@ -14,7 +14,7 @@ protocol LocationsViewControllerDelegate {
   func didUpdateLocationAnnotations(_ locationAnnotations : [LocationAnnotation])
 }
 
-class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LocationsDataSourceDelegate {
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LocationsDataSourceDelegate, ChildControllerScrollActivationProtocol {
 
   let cellReuseIdentifier = "UITableViewCell"
   var locationAnnotations : [LocationAnnotation] = []
@@ -43,6 +43,16 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     locationsDataSource = LocationsDataSource.init(withDelegate: self)
     locationsDataSource.requestAuthorizationAndLocations()
+  }
+
+  // ChildControllerScrollActivationProtocol Methods
+
+  func enableScrollView() {
+    tableView.isScrollEnabled = true
+  }
+
+  func disableScrollView() {
+    tableView.isScrollEnabled = false
   }
 
   // LocationsDataSourceDelegate Methods

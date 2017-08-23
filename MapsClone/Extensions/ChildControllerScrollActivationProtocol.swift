@@ -1,5 +1,5 @@
 //
-//  ChildControllerScrollActivationProtocol
+//  ChildControllerScrollActivationProtocol.swift
 //  MapsClone
 //
 //  Created by Amy Ly on 8/20/17.
@@ -8,12 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
-  func enableScrollView(_ scrollView : UIScrollView) {
-    scrollView.isScrollEnabled = true
-  }
-
-  func disableScrollView(_ scrollView : UIScrollView) {
-    scrollView.isScrollEnabled = false
-  }
+protocol ChildControllerScrollActivationProtocol {
+  func enableScrollView()
+  func disableScrollView()
 }
