@@ -13,6 +13,7 @@ class SnapScrollView: UIScrollView {
   let bounceDeltaY : CGFloat = 15
   let initialHeightOfContentSubview : CGFloat = 100
   let topY : CGFloat = 40
+  let middleYOffset : CGFloat = 120
 
   var bottomY : CGFloat {
     get {
@@ -28,7 +29,19 @@ class SnapScrollView: UIScrollView {
 
   var middleY : CGFloat {
     get {
-      return (topY + bottomY) / 2
+      return (topY + bottomY) / 2 + middleYOffset
+    }
+  }
+
+  var middlePoint : CGPoint {
+    get {
+      return CGPoint(x: 0, y: bottomY - middleY)
+    }
+  }
+
+  var topPoint : CGPoint {
+    get {
+      return CGPoint(x: 0, y: bottomY - topY)
     }
   }
 
@@ -50,6 +63,10 @@ class SnapScrollView: UIScrollView {
     return hitView
   }
 
+  func scrollContentOutOfView() {
+    setContentOffset(CGPoint(x: 0, y: -initialHeightOfContentSubview), animated: false)
+  }
+
   func didScrollAboveScrollView() -> Bool {
     return contentSubviewMinY + bounceDeltaY <= topY
   }
@@ -63,11 +80,11 @@ class SnapScrollView: UIScrollView {
   }
 
   func snapToMiddleY() {
-    setContentOffset(CGPoint(x: 0, y: bottomY - middleY), animated: true)
+    setContentOffset(middlePoint, animated: true)
   }
 
   func snapToTopY() {
-    setContentOffset(CGPoint(x: 0, y: bottomY - topY), animated: true)
+    setContentOffset(topPoint, animated: true)
   }
 
   func pauseScrolling() {
