@@ -16,33 +16,23 @@ class SnapScrollView: UIScrollView {
   let middleYOffset : CGFloat = 120
 
   var bottomY : CGFloat {
-    get {
-      return UIScreen.main.bounds.height - initialHeightOfContentSubview
-    }
+    return UIScreen.main.bounds.height - initialHeightOfContentSubview
   }
 
   var contentSubviewMinY : CGFloat {
-    get {
-      return bottomY - contentOffset.y;
-    }
+    return bottomY - contentOffset.y;
   }
 
   var middleY : CGFloat {
-    get {
-      return (topY + bottomY) / 2 + middleYOffset
-    }
+    return (topY + bottomY) / 2 + middleYOffset
   }
 
   var middlePoint : CGPoint {
-    get {
-      return CGPoint(x: 0, y: bottomY - middleY)
-    }
+    return CGPoint(x: 0, y: bottomY - middleY)
   }
 
   var topPoint : CGPoint {
-    get {
-      return CGPoint(x: 0, y: bottomY - topY)
-    }
+    return CGPoint(x: 0, y: bottomY - topY)
   }
 
   @IBOutlet weak var contentSubview : UIView!
