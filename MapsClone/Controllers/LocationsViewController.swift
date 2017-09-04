@@ -89,7 +89,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
   func locationAnnotationsFromLocations(_ locations : [CLLocation]) -> [LocationAnnotation] {
     var annotations : [LocationAnnotation] = []
     for location in locations {
-      annotations.append(LocationAnnotation.init(location))
+      annotations.append(LocationAnnotation.init(location: location))
     }
 
     return annotations

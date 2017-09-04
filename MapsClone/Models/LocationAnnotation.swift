@@ -9,39 +9,33 @@
 import UIKit
 import MapKit
 
-class LocationAnnotation : NSObject, MKAnnotation {
+class LocationAnnotation: NSObject, MKAnnotation {
 
   var location : CLLocation
   var name: String?
   var streetAddress: String?
 
-  init(_ location: CLLocation, _ name: String, _ streetAddress: String) {
+  init(location: CLLocation, name: String, streetAddress: String) {
     self.location = location
     self.name = name
     self.streetAddress = streetAddress
   }
 
-  convenience init(_ location :CLLocation) {
-    self.init(location, "", "")
+  convenience init(location: CLLocation) {
+    self.init(location: location, name: "", streetAddress: "")
   }
 
   // MKAnnotation Methods
 
+  var coordinate: CLLocationCoordinate2D {
+    return location.coordinate
+  }
+
   var title: String? {
-    get {
-      return name
-    }
+    return name
   }
 
   var subtitle: String? {
-    get {
-      return streetAddress
-    }
-  }
-
-  var coordinate: CLLocationCoordinate2D {
-    get {
-      return location.coordinate
-    }
+    return streetAddress
   }
 }

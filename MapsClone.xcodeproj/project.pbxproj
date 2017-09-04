@@ -25,6 +25,7 @@
 		E56850B11F4A10E50051F37D /* ChildControllerScrollActivationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56850B01F4A10E50051F37D /* ChildControllerScrollActivationProtocol.swift */; };
 		E56850B31F4A28240051F37D /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56850B21F4A28240051F37D /* LocationsDataSource.swift */; };
 		E56E029E1F5CD8A500927793 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E029D1F5CD8A500927793 /* APIClient.swift */; };
+		E5EA9FB61F5CEA00009D4784 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA9FB51F5CEA00009D4784 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E56850B01F4A10E50051F37D /* ChildControllerScrollActivationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildControllerScrollActivationProtocol.swift; path = Extensions/ChildControllerScrollActivationProtocol.swift; sourceTree = "<group>"; };
 		E56850B21F4A28240051F37D /* LocationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsDataSource.swift; path = Controllers/LocationsDataSource.swift; sourceTree = "<group>"; };
 		E56E029D1F5CD8A500927793 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Client/APIClient.swift; sourceTree = "<group>"; };
+		E5EA9FB51F5CEA00009D4784 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Models/Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E51148FB1F4C81730041D41C /* LocationAnnotation.swift */,
+				E5EA9FB51F5CEA00009D4784 /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51148FF1F4CAE640041D41C /* DetailViewController.swift in Sources */,
+				E5EA9FB61F5CEA00009D4784 /* Location.swift in Sources */,
 				E56850AF1F49EB770051F37D /* UIViewExtension.swift in Sources */,
 				E56850B31F4A28240051F37D /* LocationsDataSource.swift in Sources */,
 				E56E029E1F5CD8A500927793 /* APIClient.swift in Sources */,
