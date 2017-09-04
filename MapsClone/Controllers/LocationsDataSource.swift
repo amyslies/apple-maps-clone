@@ -62,7 +62,9 @@ class LocationsDataSource: NSObject, CLLocationManagerDelegate {
   }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    delegate.didUpdateLocations(locations)
+    APIClient.sharedClient.getNearbyPlacesWithCompletion { () -> [Any] in
+      delegate.didUpdateLocations(locations)
+    }
     locationManager.stopUpdatingLocation()
   }
 }
