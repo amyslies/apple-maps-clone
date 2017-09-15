@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 protocol LocationsDataSourceDelegate {
-  func didUpdateLocations(_ locations : [CLLocation])
+  func didUpdateLocations(_ locations : [Location])
 }
 
 class LocationsDataSource: NSObject, CLLocationManagerDelegate {
@@ -62,10 +62,9 @@ class LocationsDataSource: NSObject, CLLocationManagerDelegate {
   }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    APIClient.sharedClient.getNearbyPlacesWithCompletion { () -> [Any] in
-      return []
+    APIClient.sharedClient.getNearbyPlacesWithCompletion { (nearbyLocations) in
+      self.delegate.didUpdateLocations(nearbyLocations)
     }
-    delegate.didUpdateLocations(locations)
     locationManager.stopUpdatingLocation()
   }
 }

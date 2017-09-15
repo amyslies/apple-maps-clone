@@ -35,6 +35,9 @@ class Location: NSObject {
   var formattedAddress : String?
   var rating : Float!
   var priceLevel : PriceLevel!
+  var location : CLLocation {
+    return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+  }
 
   init(name: String, placeID: String, coordinate : CLLocationCoordinate2D, openStatus : OpenStatus, phoneNumber : String?, formattedAddress : String?, rating : Float, priceLevel : PriceLevel) {
 

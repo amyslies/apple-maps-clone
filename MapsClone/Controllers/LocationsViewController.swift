@@ -57,7 +57,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
 
   // LocationsDataSourceDelegate Methods
 
-  func didUpdateLocations(_ locations: [CLLocation]) {
+  func didUpdateLocations(_ locations: [Location]) {
     self.locationAnnotations = self.locationAnnotationsFromLocations(locations)
     delegate.didUpdateLocationAnnotations(self.locationAnnotations)
     tableView.reloadData()
@@ -86,10 +86,10 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     delegate.didSelectLocationAnnotation(locationAnnotations[indexPath.row])
   }
 
-  func locationAnnotationsFromLocations(_ locations : [CLLocation]) -> [LocationAnnotation] {
+  func locationAnnotationsFromLocations(_ locations : [Location]) -> [LocationAnnotation] {
     var annotations : [LocationAnnotation] = []
     for location in locations {
-      annotations.append(LocationAnnotation.init(location: location))
+      annotations.append(LocationAnnotation.init(location: location.location))
     }
 
     return annotations
