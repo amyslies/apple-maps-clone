@@ -76,9 +76,15 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
   }
 
   // MKMapViewDelegate Methods
-
-
-
+  
+  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    if let annotation = view.annotation {
+      if !annotation.isKind(of: MKUserLocation.classForCoder()) {
+        didSelectLocationAnnotation(annotation as! LocationAnnotation)
+      }
+    }
+  }
+  
   // UIScrollViewDelegate Methods
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -121,7 +127,6 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
 
   func showDetailsWithCompletion(completion: @escaping () -> Void) {
     locationsScrollView.snapToMiddleY()
-
     detailScrollView.isHidden = false
 
     UIView.animate(withDuration: 0.2, animations: { 

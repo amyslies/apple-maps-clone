@@ -17,6 +17,7 @@ class LocationsDataSource: NSObject, CLLocationManagerDelegate {
 
   var delegate : LocationsDataSourceDelegate!
   var locationManager : CLLocationManager!
+  var locations: [Location] = []
 
   init(withDelegate dataSourceDelegate : LocationsDataSourceDelegate) {
     super.init()
@@ -63,6 +64,7 @@ class LocationsDataSource: NSObject, CLLocationManagerDelegate {
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     APIClient.sharedClient.getNearbyPlacesWithCompletion { (nearbyLocations) in
+      self.locations = nearbyLocations
       self.delegate.didUpdateLocations(nearbyLocations)
     }
     locationManager.stopUpdatingLocation()

@@ -76,8 +76,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
       cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellReuseIdentifier)
     }
 
-    cell!.textLabel?.text = "location: \(indexPath.row)"
-
+    cell!.textLabel?.text = locationsDataSource.locations[indexPath.row].name
     return cell!
   }
 
@@ -89,7 +88,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
   func locationAnnotationsFromLocations(_ locations : [Location]) -> [LocationAnnotation] {
     var annotations : [LocationAnnotation] = []
     for location in locations {
-      annotations.append(LocationAnnotation.init(location: location.location))
+      annotations.append(LocationAnnotation.init(location: location))
     }
 
     return annotations

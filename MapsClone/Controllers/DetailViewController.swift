@@ -16,10 +16,7 @@ protocol DetailViewControllerDelegate {
 class DetailViewController: UIViewController {
 
   var delegate : DetailViewControllerDelegate!
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
+  @IBOutlet weak var label: UILabel!
 
   init(withDelegate delegate : DetailViewControllerDelegate) {
     super.init(nibName: nil, bundle: nil)
@@ -31,12 +28,11 @@ class DetailViewController: UIViewController {
     super.init(coder: aDecoder)
   }
 
-  func configureForLocation(_ location : CLLocation) {
-    print(location.coordinate)
+  func configureForLocation(_ location : Location) {
+    self.label.text = location.name
   }
 
   @IBAction func dismissButtonPressed(_ sender: UIButton) {
     delegate.didDismissDetails()
   }
-
 }

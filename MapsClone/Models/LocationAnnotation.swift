@@ -10,18 +10,17 @@ import UIKit
 import MapKit
 
 class LocationAnnotation: NSObject, MKAnnotation {
-
-  var location : CLLocation
+  var location : Location
   var name: String?
   var streetAddress: String?
 
-  init(location: CLLocation, name: String, streetAddress: String) {
+  init(location: Location, name: String, streetAddress: String) {
     self.location = location
     self.name = name
     self.streetAddress = streetAddress
   }
 
-  convenience init(location: CLLocation) {
+  convenience init(location: Location) {
     self.init(location: location, name: "", streetAddress: "")
   }
 
