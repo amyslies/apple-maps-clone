@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    self.provideGooglePlacesAPIKey()
+    provideGooglePlacesAPIKey()
 
     let mapsController = MapsViewController(nibName: "MapsViewController", bundle: nil)
 
@@ -30,18 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func provideGooglePlacesAPIKey() {
-    let url = Bundle.main.url(forResource: "MapsAPIs", withExtension: "plist")
-    if let url = url {
-//      let data = try Data.init(contentsOf: url) catch error {
-//        // handle error
-//      }
-//      let dict = PropertyListSerialization.propertyList(from: data,
-//                                                        options: .mutableContainers,
-//                                                        format: nil)
-//      if let apiKey
-//
-//
-//      GMSPlacesClient.provideAPIKey(apiKey)
+    var myDict: NSDictionary?
+    if let path = Bundle.main.path(forResource: "MapsAPIs", ofType: "plist") {
+      myDict = NSDictionary(contentsOfFile: path)
+    }
+    
+    if let dict = myDict {
+      if let apiKey = dict["googleplaces_key"] as! String? {
+          GMSPlacesClient.provideAPIKey(apiKey)
+      }
     }
   }
 }
