@@ -11,6 +11,7 @@ import UIKit
 extension UIView {
 
   func addFullSizeSubview(_ subview : UIView) {
+    subview.translatesAutoresizingMaskIntoConstraints = false
     self.addSubview(subview)
 
     let views = ["subview" : subview]

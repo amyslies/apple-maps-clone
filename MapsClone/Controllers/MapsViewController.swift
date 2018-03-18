@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDelegate, LocationsViewControllerDelegate, DetailViewControllerDelegate {
-
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var locationsContainerView: UIView!
   @IBOutlet weak var locationsScrollView: SnapScrollView!
@@ -36,7 +35,6 @@ class MapsViewController: UIViewController, UIScrollViewDelegate, MKMapViewDeleg
 
     detailVC = DetailViewController.init(withDelegate: self)
     setUpChildViewController(detailVC, inContainerView: detailContainerView)
-
     locationsVC = LocationsViewController.init(withDelegate: self)
     setUpChildViewController(locationsVC, inContainerView: locationsContainerView)
   }
