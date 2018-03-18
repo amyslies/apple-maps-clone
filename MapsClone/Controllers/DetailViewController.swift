@@ -14,7 +14,6 @@ protocol DetailViewControllerDelegate {
 }
 
 class DetailViewController: UIViewController {
-
   var delegate : DetailViewControllerDelegate!
   @IBOutlet weak var label: UILabel!
 
