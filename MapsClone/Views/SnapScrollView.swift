@@ -40,17 +40,13 @@ class SnapScrollView: UIScrollView {
   @IBOutlet weak var ignoredSubview : UIView!
 
   override func awakeFromNib() {
+    super.awakeFromNib()
     heightConstraint.constant = -initialHeightOfContentSubview
   }
 
   override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     let hitView = super.hitTest(point, with: event)
-
-    if hitView == ignoredSubview {
-      return nil
-    }
-
-    return hitView
+    return hitView == ignoredSubview ? nil : hitView
   }
 
   func scrollContentOutOfView() {
