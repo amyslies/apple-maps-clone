@@ -15,7 +15,7 @@ My rendition of Apple [Maps](https://www.apple.com/ios/maps/) with minimal featu
 
 Clone the project.
 ```
-git clone https://github.com/amylyBU/MapsClone.git
+git clone https://github.com/amylyBU/apple-maps-clone.git
 ```
 
 Install [cocoapods](https://cocoapods.org/) if necessary, then install pods.
