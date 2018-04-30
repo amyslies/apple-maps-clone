@@ -13,9 +13,11 @@ My rendition of Apple [Maps](https://www.apple.com/ios/maps/) with minimal featu
 
 ## Set up
 
-Clone the project.
+Clone the project and navigate into its directory.
 ```
-git clone https://github.com/amylyBU/apple-maps-clone.git
+git clone https://github.com/amyslies/apple-maps-clone.git
+cd apple-maps-clone
+
 ```
 
 Install [cocoapods](https://cocoapods.org/) if necessary, then install pods.
@@ -25,12 +27,11 @@ pod install
 
 Open the `.xcworkspace` project in Xcode and run the app.
 
-## For Later
+## ToDo
 
-1) Show location details
-2) Infinite scrolling for locations
-3) Location search
-4) Centering on current location
-5) Better assets, but I'll need a designer for that...
-
-And other Apple Maps things.
+* Show location details
+* Infinite scrolling for locations
+* Location search
+* Centering on current location
+* Better user interface assets
+* Write tests for math logic behind snapping behavior and more
